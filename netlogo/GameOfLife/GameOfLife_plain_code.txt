@@ -1,0 +1,29 @@
+patches-own [new-color]
+to setup
+  clear-all
+  reset-ticks
+  ask patches [
+    set pcolor one-of [white pink]
+  ]
+end
+
+to go
+  tick
+  ask patches [
+    let num-live-neighbors count (neighbors with [pcolor = pink])
+    set new-color pcolor
+    if-else (pcolor = pink)[
+      if (num-live-neighbors < 2 or num-live-neighbors > 3)[
+        set new-color white
+      ]
+    ][
+      if(num-live-neighbors = 3)[
+        set new-color pink
+      ]
+    ]
+  ]
+
+  ask patches[
+    set pcolor new-color
+  ]
+end

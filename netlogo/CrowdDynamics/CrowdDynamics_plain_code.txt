@@ -1,0 +1,83 @@
+breed [pedestrians pedestrian]
+patches-own [is-wall exit-distance is-occupied]
+globals [max-distance target-x target-y exit-y wall-x]
+
+to setup
+  clear-all
+  reset-ticks
+  set max-distance 100
+  set exit-y 0
+  set wall-x random 20
+  set target-x 20
+  set target-y random 20
+  ask patches[
+    set pcolor white
+    set is-wall false
+    set is-occupied false
+    set exit-distance max-distance
+  ]
+  ask patches with [pxcor = wall-x and (pycor < (exit-y - 1) or pycor > (exit-y + 1)) ][
+    set pcolor red
+    set is-wall true
+  ]
+  ask patches with [pxcor = target-x and pycor = target-y][
+    set pcolor pink
+  ]
+  create-pedestrians 15[
+    set size 2
+    set shape "person"
+    set heading 90
+    ask patch pxcor pycor [
+      set is-occupied false
+    ]
+    move-to one-of patches with [is-wall = false and is-occupied = false and pxcor < wall-x ]
+    ask patch pxcor pycor [
+      set is-occupied true
+    ]
+  ]
+  ask patches with [is-wall = false and pxcor <= wall-x][
+    set exit-distance (abs (exit-y - pycor) + abs (wall-x - pxcor) + abs(wall-x - target-x) + abs(exit-y - target-y))
+  ]
+  ask patches with [is-wall = false and pxcor > wall-x][
+    set exit-distance (abs (target-y - pycor) + abs (target-x - pxcor) )
+  ]
+end
+
+to start
+  tick
+  ask pedestrians[
+    let min-distance 100
+    ask patch pxcor pycor [
+      set is-occupied false
+    ]
+    ask neighbors [
+      if(exit-distance < min-distance and is-occupied = false)[
+        set min-distance  exit-distance
+      ]
+    ]
+    move-to one-of neighbors with [exit-distance = min-distance]
+    if-else(pxcor = target-x and pycor = target-y)[
+      die
+    ][
+      ask patch pxcor pycor [
+        set is-occupied true
+      ]
+    ]
+  ]
+end
+
+to start-von-neumann
+  tick
+  ask pedestrians[
+    let min-distance 100
+    ask neighbors4 [
+      if(exit-distance < min-distance)[
+        set min-distance  exit-distance
+      ]
+    ]
+    move-to one-of neighbors4 with [exit-distance = min-distance]
+    if(pxcor = target-x and pycor = target-y)[
+      die
+    ]
+  ]
+end

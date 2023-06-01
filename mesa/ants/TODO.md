@@ -1,0 +1,8 @@
+- [x] dodać kierunki ruchu
+- [x] poprawić dyfuzje
+- [x] poprawic mechanizm znajdywania jedzenia
+- [x] dodać faktycznie pole statyczne
+- [x] dodać jedzenie jako okręgi z promieniem
+- [x] dodać lepsze podążanie za feromonem
+- [x] dodać ściany
+- [x] dwa gatunki
