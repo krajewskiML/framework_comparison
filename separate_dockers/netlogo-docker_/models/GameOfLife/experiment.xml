@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE experiments SYSTEM "behaviorspace.dtd">
+<experiments>
+  <experiment name="exp1" repetitions="1" runMetricsEveryStep="false">
+    <setup>setup</setup>
+    <go>go</go>
+    <timeLimit steps="1000"/>
+    <enumeratedValueSet variable="world-width">
+      <value value="100"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="world-height">
+      <value value="100"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="min-pxcor">
+      <value value="0"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="max-pxcor">
+      <value value="99"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="min-pycor">
+      <value value="0"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="max-pycor">
+      <value value="99"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="input-name">
+      <value value="&quot;INPUT&quot;"/>
+    </enumeratedValueSet>
+  </experiment>
+</experiments>
