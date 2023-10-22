@@ -1,0 +1,81 @@
+GAME OF LIFE
+input: 10x10board.csv, rep: 10000, iterations: 10000
+1 iteration time: 2.789801433086395e-06
+Total time:  278.9801433086395
+---
+input: 10x10board.csv, rep: 10000, iterations: 10000
+1 iteration time: 2.7897818636894225e-06
+Total time:  278.97818636894226
+---
+input: 10x10board.csv, rep: 10000, iterations: 10000
+1 iteration time: 2.8260653734207153e-06
+Total time:  282.60653734207153
+---
+input: 100x100board.csv, rep: 100, iterations: 100
+1 iteration time: 0.001957335090637207
+Total time:  19.57335090637207
+---
+input: 100x100board.csv, rep: 100, iterations: 1000
+1 iteration time: 0.00037856417655944823
+Total time:  37.856417655944824
+---
+input: 100x100board.csv, rep: 100, iterations: 1000
+1 iteration time: 0.0004057488489151001
+Total time:  40.57488489151001
+---
+input: 100x100board.csv, rep: 1000, iterations: 1000
+1 iteration time: 0.0003915258402824402
+Total time:  391.5258402824402
+---
+input: 100x100board.csv, rep: 1000, iterations: 1000
+1 iteration time: 0.00033583337688446044
+Total time:  335.83337688446045
+---
+input: 1000x1000board.csv, rep: 100, iterations: 100
+1 iteration time: 0.009403341031074524
+Total time:  94.03341031074524
+---
+input: 1000x1000board.csv, rep: 10, iterations: 100
+1 iteration time: 0.2355753219127655
+Total time:  235.5753219127655
+---
+input: 1000x1000board.csv, rep: 10, iterations: 10
+1 iteration time: 1.0321875643730163
+Total time:  103.21875643730164
+---
+input: 1000x1000board.csv, rep: 10, iterations: 1
+1 iteration time: 9.200545263290405
+Total time:  92.00545263290405
+---
+input: 1000x1000board.csv, rep: 1, iterations: 1
+1 iteration time: 14.120107650756836
+Total time:  14.120107650756836
+---
+input: 1000x1000board.csv, rep: 1, iterations: 2
+1 iteration time: 8.218766808509827
+Total time:  16.437533617019653
+---
+input: 1000x1000board.csv, rep: 1, iterations: 4
+1 iteration time: 4.555414319038391
+Total time:  18.221657276153564
+---
+input: 1000x1000board.csv, rep: 1, iterations: 4
+1 iteration time: 4.35222452878952
+Total time:  17.40889811515808
+---
+input: 1000x1000board.csv, rep: 1, iterations: 10
+1 iteration time: 2.6300035953521728
+Total time:  26.30003595352173
+---
+input: 1000x1000board.csv, rep: 1, iterations: 100
+1 iteration time: 1.4809742546081544
+Total time:  148.09742546081543
+---
+input: 1000x1000board.csv, rep: 1, iterations: 500
+1 iteration time: 1.1828157415390015
+Total time:  591.4078707695007
+---
+input: 1000x1000board.csv, rep: 1, iterations: 1000
+1 iteration time: 1.201897136926651
+Total time:  1201.897136926651
+---

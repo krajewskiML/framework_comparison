@@ -1,0 +1,52 @@
+input: <10x10>, rep: 1, iterations: 1000
+1 iteration time: 0.00022050094604492186
+Total time:  0.22050094604492188
+---
+input: <10x10>, rep: 1, iterations: 1000
+1 iteration time: 0.00019097185134887696
+Total time:  0.19097185134887695
+---
+input: <10x10>, rep: 100, iterations: 1000
+1 iteration time: 0.00018632052659988402
+Total time:  18.632052659988403
+---
+input: <10x10>, rep: 100, iterations: 1000
+1 iteration time: 0.00018525739669799805
+Total time:  18.525739669799805
+---
+
+100x100
+input: <100x100>, rep: 100, iterations: 1000
+1 iteration time: 0.003381396279335022
+Total time:  338.1396279335022
+---
+input: <100x100>, rep: 100, iterations: 1000
+1 iteration time: 0.0033867476677894594
+Total time:  338.6747667789459
+---
+
+1000x1000
+input: <1000x1000>, rep: 1, iterations: 100
+1 iteration time: 1.1302426290512084
+Total time:  113.02426290512085
+---
+input: <1000x1000>, rep: 1, iterations: 1000
+1 iteration time: 0.8135007395744324
+Total time:  813.5007395744324
+---
+input: <1000x1000>, rep: 1, iterations: 1000
+1 iteration time: 1.0097076408863068
+Total time:  1009.7076408863068
+---
+input: <1000x1000>, rep: 1, iterations: 1000
+1 iteration time: 0.76730056142807
+Total time:  767.3005614280701
+---
+input: <1000x1000>, rep: 1, iterations: 1000
+1 iteration time: 0.857423035621643
+Total time:  857.4230356216431
+---
+input: <1000x1000>, rep: 5, iterations: 1000
+1 iteration time: 0.7742881656169891
+Total time:  3871.4408280849457
+---
