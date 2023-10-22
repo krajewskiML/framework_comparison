@@ -3,8 +3,10 @@ import subprocess
 import os
 
 MODEL_FOLDER = os.path.join("game_of_life", "maps")
-REPETITIONS = 5
-INPUT_NAMES = ['10x10board.csv', '100x100board.csv', '1000x1000board.csv']
+REPETITIONS = 2
+# INPUT_NAMES = ['10x10board.csv', '100x100board.csv', '1000x1000board.csv']
+INPUT_NAMES = ['1000x1000board.csv']
+# INPUT_NAMES = ['10x10board.csv', '100x100board.csv']
 for input_name in INPUT_NAMES:
     start = time.time()
     for rep in range(REPETITIONS):
