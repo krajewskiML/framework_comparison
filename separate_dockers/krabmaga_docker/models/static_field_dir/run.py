@@ -7,7 +7,7 @@ MAPS_FOLDER = './maps'
 INPUT_NAMES = ['board_1_500.csv', 'board_2_500.csv', 'board_3_100.csv']
 BIN_PATH = './target/release/static_field'
 
-REPETITIONS = 10
+REPETITIONS = 5
 
 directory = os.getcwd()
 os.chmod(BIN_PATH,  0b111101101)
