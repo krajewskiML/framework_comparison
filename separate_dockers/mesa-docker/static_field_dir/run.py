@@ -10,7 +10,7 @@ for input_name in INPUT_NAMES:
     start = time.time()
     for rep in range(REPETITIONS):
         subprocess.run(['python3', os.path.join('static_field', 'visual.py'),
-                        os.path.join(MODEL_FOLDER, input_name), -1])
+                        os.path.join(MODEL_FOLDER, input_name), "-1"])
 
     end = time.time()
     print((end - start)/REPETITIONS, flush=True)
