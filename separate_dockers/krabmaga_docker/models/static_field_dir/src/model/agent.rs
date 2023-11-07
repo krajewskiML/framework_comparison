@@ -38,9 +38,6 @@ impl PartialEq for Person {
 
 impl Agent for Person {
     fn step(&mut self, state: &mut dyn State) {
-        if self.escaped {
-            return;
-        }
         //println!("Person {} at {} {}", self.id, self.loc.x, self.loc.y);
         // agent will take a look at its neighbors and move to the first empty cell which value is lower than its own
         // if there is no empty cell with lower value, it will stay in place
@@ -60,42 +57,29 @@ impl Agent for Person {
         let mut new_loc = current_loc;
         let mut new_value = current_value;
         let mut found = false;
-        //print current value
-        //println!("Person {} current value {}", self.id, current_value);
+        let mut neighbour_loc;
+        let mut neighbour_value;
 
         for (dx, dy) in DIRECTIONS.iter() {
-            let neighbor_loc = Int2D { x: current_loc.x + dx, y: current_loc.y + dy };
+            neighbour_loc = Int2D { x: current_loc.x + dx, y: current_loc.y + dy };
             // print neighbor location
             // println!("Person {} neighbor location {} {}", self.id, neighbor_loc.x, neighbor_loc.y);
             // check if neighbor is in bounds
-            if neighbor_loc.x >= 0 && neighbor_loc.x < board.rows && neighbor_loc.y >= 0 && neighbor_loc.y < board.cols {
+            if neighbour_loc.x >= 0 && neighbour_loc.x < board.rows && neighbour_loc.y >= 0 && neighbour_loc.y < board.cols {
                 // check if there is an agent in the neighbor cell if None then the cell is empty
-                match board.agents.get_objects_unbuffered(&neighbor_loc) {
-                    None => {
-                        let neighbor_value = board.field.get_value(&neighbor_loc).unwrap();
-                        // check if the value of the neighbor cell is lower than the current value
-                        if neighbor_value < new_value {
-                            //println!("Person {} new value {}", self.id, neighbor_value);
-                            // if so, update the new location and value
-                            new_loc = neighbor_loc;
-                            new_value = neighbor_value;
+                neighbour_value = board.field.get_value(&neighbour_loc).unwrap();
+                if neighbour_value < new_value {
+                    //println!("Person {} new value {}", self.id, neighbor_value);
+                    match board.agents.get_objects_unbuffered(&neighbour_loc) {
+                        None => {
+                            new_loc = neighbour_loc;
+                            new_value = neighbour_value;
                             found = true;
-                        }
-                    },
-                    Some(agents) => {
-                        if agents.len() == 0 {
-                            let neighbor_value = board.field.get_value(&neighbor_loc).unwrap();
-                            // check if the value of the neighbor cell is lower than the current value
-                            if neighbor_value < new_value {
-                                //println!("Person {} new value {}", self.id, neighbor_value);
-                                // if so, update the new location and value
-                                new_loc = neighbor_loc;
-                                new_value = neighbor_value;
-                                found = true;
-                            }
-                        }
+                        },
+                        Some(_) => {}
                     }
                 }
+
             }
         }
 
@@ -104,5 +88,10 @@ impl Agent for Person {
             board.agents.set_object_location(*self, &new_loc);
         }
         //board.agents.update();
+    }
+
+    fn is_stopped(&mut self, _state: &mut dyn State) -> bool {
+        self.escaped
+
     }
 }

@@ -145,15 +145,27 @@ impl State for Board {
         //     }
         // }
         // println!("Step {}", step);
-        self.agents.update();
+        self.agents.lazy_update();
         self.step = step;
+        // iterate over the agents and deque them if they have escaped
         // print how many agents are still on the board
         // println!("{} agents left", self.initial_person_count - self.escaped);
         // iterate over the agents and print its location
         //self.agents.iter_objects(|_, agent|{println!("Person is still at field {} at {} {}", agent.id, agent.loc.x, agent.loc.y)});
     }
 
-    fn end_condition(&mut self, schedule: &mut Schedule) -> bool {
+    // fn after_step(&mut self, schedule: &mut Schedule) {
+    //     // First, determine which agents need to be dequeued.
+    //     // self.agents.obj2loc.keys().iter().for_each(|agent| {
+    //     //     if agent.escaped {
+    //     //         schedule.dequeue(Box::new(**agent), agent.id);
+    //     //     }
+    //     // });
+    // }
+
+
+    fn end_condition(&mut self, _schedule: &mut Schedule) -> bool {
+        // print how manby agents are left
         // if agents field is empty then end the simulation
         if self.escaped == self.initial_person_count {
             // print how many steps it took to evacuate
