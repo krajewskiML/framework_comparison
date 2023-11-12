@@ -19,6 +19,6 @@ for map_size, steps in zip(MAP_SIZES, STEPS):
             [BIN_PATH, "-s", map_size, "-t", steps]
         )
     end = time.time()
-    print(f"map size: {map_size}, rep: {REPETITIONS}, iterations: {steps}")
-    print("Total time: ", (end - start))
-    print("---")
+    print(f"map size: {map_size}, rep: {REPETITIONS}, iterations: {steps}", flush=True)
+    print("Total time: ", (end - start), flush=True)
+    print("---", flush=True)
