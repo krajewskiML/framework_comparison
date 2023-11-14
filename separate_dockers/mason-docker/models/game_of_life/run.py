@@ -8,7 +8,7 @@ MAPS_FOLDER = './maps'
 INPUT_NAMES = ['10x10board.csv', '100x100board.csv', '1000x1000board.csv']
 JAR_PATH = './source/golSimulation.jar'
 
-REPETITIONS = 1
+REPETITIONS = 1000
 NUM_STEPS = 100  # Probably should be in a separate file since its same for all simulations
 
 directory = os.getcwd()

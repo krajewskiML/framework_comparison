@@ -5,7 +5,7 @@ import sys
 
 JAR_PATH = './source/antsSimulation.jar'
 
-REPETITIONS = 1
+REPETITIONS = 3
 MAP_SIZES = [100, 300, 500]
 
 directory = os.getcwd()

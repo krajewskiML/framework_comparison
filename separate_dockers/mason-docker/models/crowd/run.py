@@ -8,7 +8,7 @@ MAPS_FOLDER = './maps'
 INPUT_NAMES = ['board_1_500.csv', 'board_2_500.csv', 'board_3_100.csv']
 JAR_PATH = './source/crowdSim.jar'
 
-REPETITIONS = 1
+REPETITIONS = 5
 NUM_STEPS = -1  # Probably should be in a separate file since its same for all simulations
 
 directory = os.getcwd()
